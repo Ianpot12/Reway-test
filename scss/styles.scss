@@ -1,0 +1,318 @@
+@import "node_modules/compass-mixins/lib/compass";
+
+// FONTS
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Suez+One&display=swap');
+
+// important 
+$nb:   !important;
+
+
+/*
+    Fonts
+*/
+$font_fb:           Arial, Helvetica, Lucida, sans-serif;
+$font_head:         'Suez One', $font_fb;
+$font_body:         'PT Sans', $font_fb;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: $font_head;
+
+}
+
+p,
+a {
+
+    font-family: $font_body;
+
+}
+
+.font-head {
+
+    font-family: $font_head $nb;
+ 
+}
+
+
+
+// Images 
+
+$path_img:                  '../assets/img/';
+
+$gift:                      url(#{$path_img}gift.svg);
+$heart:                     url(#{$path_img}heart.svg);
+$star:                      url(#{$path_img}star.svg);
+$tag:                       url(#{$path_img}tag.svg);
+$sale-banner:                       url(#{$path_img}Sale-Banner.jpg);
+
+
+// color-var
+
+$color_accent:        #00A2FF;
+$color_accent_1:      #4A4A4A;
+$color_accent-2:      #111111;
+$color-light-grey:    #EAEAEA;
+$color-text:          #828282;
+
+
+$color_white :        #fff;
+
+.rw-light {
+    background: $color-light-grey;
+    *{
+        background: $color-light-grey;
+    }
+}
+
+.text-grey {
+    color: $color-text;
+}
+
+//spacing
+
+.section {
+    padding: 20px 45px $nb;
+}
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/********************************************************/
+/************************ HEADER ************************/
+/********************************************************/
+
+.navbar {
+
+    background: $color_white $nb;
+    padding: 20px 45px;
+
+    &-brand {
+
+        margin-right: 75px;
+
+    }
+
+    &-nav {
+
+        width: 100%;
+
+        .nav-item {
+
+            a {
+
+                font-family: $font_head;
+                font-size: 17px;
+                line-height: 22px;
+                text-align: center;
+                text-transform: uppercase;
+                color: $color_accent-2 $nb;
+                
+            }
+
+            &:not(:last-child) {
+
+                @include media-breakpoint-up(xl) {
+
+                    margin-right: 30px;
+
+                }
+
+            }
+
+        }
+
+        .active {
+
+            a {
+                color: $color_accent $nb;
+            }
+        }
+
+    }
+
+    &-rate {
+
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        width: 100%;
+
+        .nav-link {
+
+            span {
+                display: none;
+            }
+
+        }
+
+        .link {
+
+            &-gift {
+
+               content: $gift; 
+                
+            }
+            &-star {
+
+                content: $star; 
+
+            }
+            &-heart {
+
+                content: $heart;
+
+            }
+            &-tag {
+
+                content: $tag; 
+
+            }
+
+        }
+
+    }
+
+    &-buttons {
+
+        width: 100%;
+
+        button {
+
+            &:first-child {
+
+                margin-right: 10px;
+
+            }
+
+        }
+
+    }
+
+    &-toggler {
+
+    }
+
+}
+
+/********************************************************/
+/****************** BUTTONS ******************************/
+/********************************************************/
+
+
+.btn {
+
+    &-primary {
+
+        @include border-radius(4px);
+        @include box-sizing(border-box);
+        background: transparent;
+        border: 3px solid $color_accent $nb;
+        color: $color_accent;
+        font-family: $font_head;
+        font-size: 17px;
+        height: 42px;
+        line-height: 22px;
+        padding: 5px 30px;
+        text-transform: uppercase;
+
+
+        &:hover {
+
+            background: $color_accent;
+            color: $color_white;
+            transition: 3000s;
+
+        }
+
+    }
+
+    &-secondary {
+
+        @include border-radius(4px);
+        @include box-sizing(border-box);
+        background: $color_white;
+        border: 3px solid $color_white;
+        color: $color_accent;
+        font-family: $font_head;
+        font-size: 17px;
+        height: 42px;
+        line-height: 22px;
+        padding: 5px 30px;
+        text-transform: uppercase;
+
+        &:hover {
+
+            background: $color_accent;
+            border: 3px solid $color_accent;
+            color: $color_white;
+
+        }
+        
+    }
+
+}
+
+
+/********************************************************/
+/****************** GRID ******************************/
+/********************************************************/
+
+// body {
+
+//     max-width: 1300px;
+//     margin: 0 auto;
+
+// }
+
+.main-sidebar {
+
+    background: red;
+    height: 500px;
+
+}
+
+.main-content {
+
+    background: rgb(133, 133, 139);
+    height: 500px;
+}
+
+.footer {
+
+    background: $color_accent_1;
+
+    * {
+
+        color: $color_white;
+
+        ul {
+
+            list-style-type: none;
+            padding-left: 0;
+
+        }
+
+    }
+
+}
+
+
+/********************************************************/
+/****************** MODULES ******************/
+/********************************************************/
+
+.module-sale-banner {
+
+    padding: 12px 55px;
+    background-image: $sale-banner;
+    background-repeat: no-repeat;
+    width: 100%;
+
+}
