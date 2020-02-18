@@ -30,6 +30,7 @@ p,
 a {
 
     font-family: $font_body;
+    text-decoration: none $nb;
 
 }
 
@@ -49,23 +50,32 @@ $gift:                      url(#{$path_img}gift.svg);
 $heart:                     url(#{$path_img}heart.svg);
 $star:                      url(#{$path_img}star.svg);
 $tag:                       url(#{$path_img}tag.svg);
-$sale-banner:                       url(#{$path_img}Sale-Banner.jpg);
+$tag-white:                 url(#{$path_img}tag-white.svg.php);
+$icon-close:                url(#{$path_img}icon-close.svg);
+$chevron-right:             url(#{$path_img}chevron-right.svg);
+$sale-banner:               url(#{$path_img}Sale-Banner.jpg);
+$advert-banner:             url(#{$path_img}Advert-Banner.png);
+$carousel-chev-right:       url(#{$path_img}carousel-chevron-right.svg);
+$carousel-chev-left:        url(#{$path_img}carousel-chevron-left.svg);
 
 
 // color-var
 
-$color_accent:        #00A2FF;
-$color_accent_1:      #4A4A4A;
-$color_accent-2:      #111111;
-$color-light-grey:    #EAEAEA;
-$color-text:          #828282;
+$color_accent:                  #00A2FF;
+$color_accent_1:                #4A4A4A;
+$color_accent-2:                #111111;
+$color-light-grey:              #EAEAEA;
+$color-text:                    #828282;
+$color-placeholder:             rgba(130, 130, 130, 0.5);
+$color-carousel-indcator:       rgba(0, 0, 0, 0.19);
 
 
 $color_white :        #fff;
 
 .rw-light {
     background: $color-light-grey;
-    *{
+
+    * {
         background: $color-light-grey;
     }
 }
@@ -80,7 +90,16 @@ $color_white :        #fff;
     padding: 20px 45px $nb;
 }
 
+.sale {
 
+    &:before {
+
+        content: $tag-white;
+
+
+    }
+
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -113,7 +132,7 @@ $color_white :        #fff;
                 text-align: center;
                 text-transform: uppercase;
                 color: $color_accent-2 $nb;
-                
+
             }
 
             &:not(:last-child) {
@@ -156,22 +175,25 @@ $color_white :        #fff;
 
             &-gift {
 
-               content: $gift; 
-                
+                content: $gift;
+
             }
+
             &-star {
 
-                content: $star; 
+                content: $star;
 
             }
+
             &-heart {
 
                 content: $heart;
 
             }
+
             &-tag {
 
-                content: $tag; 
+                content: $tag;
 
             }
 
@@ -195,12 +217,9 @@ $color_white :        #fff;
 
     }
 
-    &-toggler {
-
-    }
+    &-toggler {}
 
 }
-
 /********************************************************/
 /****************** BUTTONS ******************************/
 /********************************************************/
@@ -217,9 +236,8 @@ $color_white :        #fff;
         color: $color_accent;
         font-family: $font_head;
         font-size: 17px;
-        height: 42px;
         line-height: 22px;
-        padding: 5px 30px;
+        padding: 10px 30px;
         text-transform: uppercase;
 
 
@@ -242,9 +260,8 @@ $color_white :        #fff;
         color: $color_accent;
         font-family: $font_head;
         font-size: 17px;
-        height: 42px;
         line-height: 22px;
-        padding: 5px 30px;
+        padding: 10px 30px;
         text-transform: uppercase;
 
         &:hover {
@@ -252,38 +269,64 @@ $color_white :        #fff;
             background: $color_accent;
             border: 3px solid $color_accent;
             color: $color_white;
+            border: 3px solid $color_white;
 
         }
-        
+
+    }
+
+    &-light {
+
+        @extend .btn-primary;
+        background: transparent;
+        border: 3px solid $color_white $nb;
+        color: $color_white;
+
+        &:hover {
+
+            background: $color_accent $nb;
+            color: $color_white;
+            border: 3px solid $color_accent $nb;
+            transition: 3000s;
+
+        }
+
+        &-lg {
+
+            @extend .btn-light;
+            @include border-radius(0 $nb);
+            background: $color_white;
+            color: $color_accent;
+            padding: 16px 46px;
+
+            &:hover {
+
+                background: transparent $nb;
+                color: $color_white $nb;
+
+            }
+
+        }
+
     }
 
 }
-
 
 /********************************************************/
 /****************** GRID ******************************/
 /********************************************************/
 
-// body {
+body {
 
-//     max-width: 1300px;
-//     margin: 0 auto;
-
-// }
-
-.main-sidebar {
-
-    background: red;
-    height: 500px;
+    max-width: 1300px;
+    margin: 0 auto;
 
 }
 
-.main-content {
+.main-sidebar {}
 
-    background: rgb(133, 133, 139);
-    height: 500px;
-}
-
+.main-content {}
+s
 .footer {
 
     background: $color_accent_1;
@@ -305,14 +348,210 @@ $color_white :        #fff;
 
 
 /********************************************************/
-/****************** MODULES ******************/
+/****************** MODULES *****************************/
 /********************************************************/
+.breadcrumb {
 
-.module-sale-banner {
+    background: $color_white;
 
-    padding: 12px 55px;
-    background-image: $sale-banner;
-    background-repeat: no-repeat;
-    width: 100%;
+    &-item {
+
+        line-height: 13px;
+
+        &:not(:first-child) {
+
+            &:before {
+
+                content: $chevron-right;
+
+            }
+        }
+    }
+}
+
+.module {
+
+    &-sale-banner {
+
+        padding: 12px 55px;
+        background-image: $sale-banner;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: cover;
+        width: 100%;
+
+    }
+
+    &-subscribe {
+
+        background: $color_accent;
+        margin-top: 47px;
+        padding: 18px 25px;
+        position: relative;
+
+        &-head {
+
+            .icon-close {
+
+                &:before {
+
+                    content: $icon-close;
+                    position: absolute;
+                    right: 12px;
+                    top: 11px;
+                    cursor: pointer;
+                }
+
+            }
+
+            i {
+                font-size: 40px;
+                padding-bottom: 14px;
+            }
+
+            h5 {
+
+                padding-bottom: 24px;
+
+            }
+        }
+
+        &-content {
+
+            label {
+                
+                padding-left: 15px;
+
+            }
+
+            input {
+
+                border: 1px solid $color_white;
+                box-sizing: border-box;
+                border-radius: 2px;
+
+                &::placeholder {
+
+                    color: $color-placeholder;
+                    font-weight: bold;
+                    text-transform: uppercase;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/********************************************************/
+/****************** CAROSEL *****************************/
+/********************************************************/
+.thumbnails {
+
+    li {
+
+        margin-top: 17px;
+        margin-right: 12px;
+
+    }
+
+}
+
+.carousel-indicators {
+
+    padding: 0 $nb;
+    position: relative $nb;
+    margin: 0 $nb;
+
+    li {
+
+
+        width: 100%;
+        height: 100%;
+
+        img {
+
+            max-width: 96px;
+            max-height: 96px;
+
+        }
+
+    }
+
+}
+
+.nav-carousel-indicators {
+
+    position: absolute;
+    left: 200px;
+    bottom: 15px;
+
+    ol {
+
+        @include border-radius(32px);
+        background: $color-carousel-indcator;
+        height: 15px;
+        margin-left: 3px $nb;
+        margin-right: 3px $nb;
+        margin-top: 0 $nb;
+        width: 76px;
+
+        li {
+
+            @include border-radius(50%);
+            color: $color_white;
+            height: 6.53px;
+            width: 6.53px;
+
+        }
+
+        .active {
+
+            color: $color_white;
+            width: 7.72px;
+            height: 7.72px;
+
+        }
+
+    }
+
+}
+
+.carousel-control {
+
+    &-next {
+
+        top: -130px;
+
+    }
+
+    &-prev {
+
+        top: -130px;
+
+    }
+
+}
+
+.carousel-nav-right {
+
+    &:before {
+
+        content: $carousel-chev-right;
+
+    }
+
+}
+
+.carousel-nav-left {
+
+    &:before {
+
+        content: $carousel-chev-left;
+
+    }
 
 }
