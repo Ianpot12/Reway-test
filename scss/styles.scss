@@ -326,7 +326,7 @@ body {
 .main-sidebar {}
 
 .main-content {}
-s
+
 .footer {
 
     background: $color_accent_1;
@@ -551,6 +551,76 @@ s
     &:before {
 
         content: $carousel-chev-left;
+
+    }
+
+}
+
+
+
+/*
+*   Offcanvas sidebar
+*/
+
+.sidebar_offcanvas {
+
+    &_container {
+
+        @include transform(translate(-105%, 0));
+        @include transition(transform .5s ease-in-out);
+        background: $color_accent;
+        min-width: 20%;
+        left: 10px;
+        top: 200px;
+        z-index: 99999;
+
+        &.open {
+
+            @include transform(translate(-15px, 0));
+            max-height: 100% $nb;
+            margin: 20px 0;
+        }
+
+    }
+
+    &_inner {
+
+        padding: 20px;
+        position: relative;
+
+
+                    &:before {
+
+                content: '';
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 3.5px 0 3.5px 7px;
+                border-color: transparent transparent transparent $color_accent;
+                right: 0;
+                top: 50%;
+
+            }
+
+    }
+
+    &_trigger {
+
+        @include transform(translate(-100%, -50%));
+        background: $color_accent;
+        display: inline-block;
+        position: absolute;
+        right: -40px;
+        top: 50%;
+        padding: 10px;
+        max-width: 50px;
+        font-size: 25px;
+
+        span {
+
+            display: none;
+
+        }
 
     }
 
