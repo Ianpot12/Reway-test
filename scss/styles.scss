@@ -27,7 +27,8 @@ h6 {
 }
 
 p,
-a {
+a,
+select  {
 
     font-family: $font_body;
     text-decoration: none $nb;
@@ -42,6 +43,7 @@ a {
 
 
 
+
 // Images 
 
 $path_img:                  '../assets/img/';
@@ -50,10 +52,12 @@ $gift:                      url(#{$path_img}gift.svg);
 $heart:                     url(#{$path_img}heart.svg);
 $star:                      url(#{$path_img}star.svg);
 $tag:                       url(#{$path_img}tag.svg);
-$tag-white:                 url(#{$path_img}tag-white.svg.php);
+$tag-white:                 url(#{$path_img}tag-white.svg);
+$store-alt:                 url(#{$path_img}store-alt.svg);
 $icon-close:                url(#{$path_img}icon-close.svg);
 $chevron-right:             url(#{$path_img}chevron-right.svg);
 $sale-banner:               url(#{$path_img}Sale-Banner.jpg);
+$cart-plus:                 url(#{$path_img}cart-plus.svg);
 $advert-banner:             url(#{$path_img}Advert-Banner.png);
 $carousel-chev-right:       url(#{$path_img}carousel-chevron-right.svg);
 $carousel-chev-left:        url(#{$path_img}carousel-chevron-left.svg);
@@ -68,9 +72,20 @@ $color-light-grey:              #EAEAEA;
 $color-text:                    #828282;
 $color-placeholder:             rgba(130, 130, 130, 0.5);
 $color-carousel-indcator:       rgba(0, 0, 0, 0.19);
+$color_white :                  #fff;
+$color_black:                   #000;
 
+.text-grey {
+    color: $color-text $nb;
+}
 
-$color_white :        #fff;
+.text-dark {
+    color: $color_black $nb;
+}
+
+.list-0 {
+    list-style-type: 0;
+}
 
 .rw-light {
     background: $color-light-grey;
@@ -80,8 +95,14 @@ $color_white :        #fff;
     }
 }
 
-.text-grey {
-    color: $color-text;
+.p-sm {
+
+    color: $color-placeholder;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    text-transform: uppercase;
 }
 
 //spacing
@@ -90,16 +111,15 @@ $color_white :        #fff;
     padding: 20px 45px $nb;
 }
 
-.sale {
+.space {
 
-    &:before {
-
-        content: $tag-white;
-
-
-    }
+    border-bottom: 1px solid $color-placeholder;
+    margin-bottom: 17px;
+    margin-left: 20px;
+    margin-right: 60px;
 
 }
+
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
@@ -217,7 +237,6 @@ $color_white :        #fff;
 
     }
 
-    &-toggler {}
 
 }
 /********************************************************/
@@ -246,6 +265,24 @@ $color_white :        #fff;
             background: $color_accent;
             color: $color_white;
             transition: 3000s;
+
+        }
+
+        &-w100 {
+
+            @extend .btn-primary;
+            width: 100%;
+            padding: 25px;
+            background: $color_accent;
+            color: $color_white;
+            font-size: 30px;
+
+            &:before {
+
+                content: $cart-plus;
+                margin-right: 30px;
+
+            }
 
         }
 
@@ -312,6 +349,22 @@ $color_white :        #fff;
 
 }
 
+.close {
+
+    color: $color_white;
+    opacity: 1;
+    position: absolute;
+    right: 12px;
+    top: 3px;
+
+    &:hover {
+
+        color: $color_white;
+
+    }
+
+}
+
 /********************************************************/
 /****************** GRID ******************************/
 /********************************************************/
@@ -323,9 +376,7 @@ body {
 
 }
 
-.main-sidebar {}
 
-.main-content {}
 
 .footer {
 
@@ -444,6 +495,216 @@ body {
 
     }
 
+    &-product-info {
+
+        border: 6px solid $color_accent;
+        padding: 22px;
+
+    }
+
+    &-product-model {
+
+        padding-top: 17px;
+
+        ul {
+
+        list-style: none;
+        padding-left: 20px;
+
+            &:nth-child(odd) {
+
+                li {
+
+                    p {
+
+                        font-weight: bold;
+
+                    }
+
+                }
+
+                .product-color {
+
+                    &:before {
+
+                        content: '';
+                        background: #91613D;
+                        border: 2px solid #000000;
+                        max-width: 15px;
+                        width: 100%;
+                        max-height: 15px;
+                        border-radius: 50%;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &-product-details {
+
+
+        p {
+            padding-left: 20px;
+
+        }
+
+    }
+
+    &-product-price  {
+
+        @include display-flex;
+        @include align-items(baseline);
+        @include justify-content(flex-end);
+        padding-right: 20px;
+
+        .price {
+
+            @include display-flex;
+            @include align-items(center);
+
+            p {
+
+                font-size: 30px;
+                line-height: 39px;
+                margin-bottom: 0;
+                margin-left: 20px;
+                position: relative;
+                text-transform: uppercase;
+
+                .badge {
+
+                    position: absolute;
+                    left: 27px;
+                    top: -25px;
+                    font-size: 14px;
+            
+                    &:before {
+
+                        @include transform(rotate(-8.84deg));
+                        border: 1px solid $color-text;
+                        color: $color-text;
+                        content: '';
+                        max-width: 50px;
+                        position: absolute;
+                        right: -2px;
+                        top: 13px;
+                        width: 50px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &-product-add-cart {
+
+        background: $color-light-grey;
+        margin-top: 15px;
+        padding: 40px 20px;
+
+        label {
+
+            padding-left: 15px;
+            font-size: 18px;
+            color: $color-placeholder;
+
+        }
+
+        select {
+
+            @include border-radius(2px);
+            box-sizing: border-box;
+            
+
+            * {
+                color: $color-placeholder;
+                font-family: $font_body $nb;
+                font-family: bold $nb;
+                text-transform: uppercase;
+            }
+
+            option {
+
+                color: $color-placeholder;
+
+            }
+
+        }
+
+        .select-quantity {
+
+            margin-top: 30px;
+
+        }
+
+    }
+
+}
+
+
+.badge {
+
+    &-primary {
+
+        background: $color_accent;
+        font-size: 16px;
+        font-style: italic;
+        font-weight: bold;
+        line-height: 21px;
+        padding: 5px 15px 5px 30px;
+        position: relative;
+
+        &:before {
+
+            content: $tag-white;
+            padding-top: 5px;
+            position: absolute;
+            left: 9px;
+            top: 4px;
+
+        }
+
+    }
+
+    &-secondary {
+
+        font-size: 12px;
+        line-height: 16px;
+        padding: 0 0 0 20px;
+        position: relative;
+        background: $color_white;
+        color: $color-placeholder;
+        font-weight: normal;
+
+        &:before {
+
+            content: $store-alt;
+            padding-top: 5px;
+            position: absolute;
+            left: 0px;
+            top: -3px;
+
+        }
+
+    }
+
+    &-light {
+
+        background: $color_white;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;     
+
+    }
+
 }
 
 /********************************************************/
@@ -486,8 +747,9 @@ body {
 .nav-carousel-indicators {
 
     position: absolute;
-    left: 200px;
+    left: 50%;
     bottom: 15px;
+    margin-left: -45px;
 
     ol {
 
@@ -576,7 +838,7 @@ body {
 
         &.open {
 
-            @include transform(translate(-15px, 0));
+            @include transform(translate(0px, 0));
             max-height: 100% $nb;
             margin: 20px 0;
         }
@@ -589,7 +851,7 @@ body {
         position: relative;
 
 
-                    &:before {
+            &:before {
 
                 content: '';
                 width: 0;

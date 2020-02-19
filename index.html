@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="https://kit.fontawesome.com/ede3277332.js"></script>
 </head>
 <body>
 
@@ -91,25 +92,44 @@
 
   <main class="clearfix">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row overflow-hidden">
 
             <div class="d-none d-lg-block col-lg-4">
                 <div id="main-sidebar" class="main-sidebar">
 
 
-                    <div class="sidebar_offcanvas_container">
+                    <div class="sidebar_offcanvas_container p-fixed p-lg-relative">
                         <div class="sidebar_offcanvas_inner">
                             <a href="#" class="sidebar_offcanvas_trigger">
                                 <span>Trigger</span>
                             </a>
                             <a href="#" class="sidebar_offcanvas_trigger_close">
-                                <i class="icon"></i>
-                                <span>Close</span>
+                                <i class="icon-seacrh-hide"></i>
+                                <span>Hide</span>
                             </a>
                             <div class="sidebar_offcanvas clearfix">
                                   <div class="siderbar-search-module">
                                     <div class="module-search">
-                                        tests
+                                        <div class="module-header">
+                                            <h5>Search reway</h5>
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <form action="search">
+                                            <div class="search-brands">
+                                                <label for="search">Brands</label>
+                                                <input type="text" name="" id="">
+                                            </div>
+                                            <div class="select-color">
+                                                <label for="color" class="text-left text-uppercase font-weight-bold "><p class="mb-0">Color</p></label>
+                                                <select class="form-control" id="select-size">
+                                                    <option>Select Color</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                  </select>
+                                            </div>
+                                        </form>
                                     </div>
                                   </div>
                             </div>
@@ -133,7 +153,9 @@
                                 <div class="module module-subscribe">
 
                                     <div class="module-subscribe-head text-center">
-                                        <a class="icon-close"></a>
+                                        <button type="button" class="close" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
                                         <i class="fa fa-envelope-o text-white"></i>
                                         <h5 class="text-white text-uppercase mb-0">Sign up to our mailing list!</h5>
                                     </div> 
@@ -185,17 +207,14 @@
                             </div>
                         </div>
 
-
-                        <span class="sale"></span>
                         <!--Slides-->
 
 
                         <div class="row">
 
-                            <div class="col-12 col-md-7">
+                            <div class="col-12 col-md-6">
                                 <!--Carousel Wrapper-->
                                 <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
-                                    <span class="sale"></span>
                                     <!--Slides-->
                                     <div class="carousel-inner" role="listbox">
                                     <div class="carousel-item active">
@@ -255,10 +274,79 @@
                                 
                             </div>
 
-                            <div class="col-12 col-md-5"></div>
+                            <div class="col-12 col-md-6">
+                                <div class="module module-product-info">
+                                    <div class="module module-head">
+                                        <h4 class="tex-left pb-1 mb-0">Dylan Hiker Boot</h2>
+                                        <div class="store-tag text-left">
+                                            <span class="badge badge-secondary text-uppercase">Superbalist</span>
+                                        </div>
+                                    </div>
+                                    <div class="module module-product-model">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <ul class="text-grey">
+                                                    <li><p>Fabication</p></li>
+                                                    <li><p>Colour</p></li>
+                                                    <li><p>Brand</p></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-8">
+                                                <ul text-dark>
+                                                    <li><p>Faux Leather</p></li>
+                                                    <li><p>Brown</p></li>
+                                                    <li><p>Superbalist</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="space"></div>
+                                    <div class="module module-product-details">
+                                        <p class="p-sm mb-1">Product Details</p>
+                                        <ul class="text-grey">
+                                            <li>Hiking boot</li>
+                                            <li>Speed laces</li>
+                                            <li>Lace-up design</li>
+                                            <li>Rubber sole</li>
+                                        </ul>
+                                    </div>
+                                    <div class="modul module-product-price">
+                                        <div class="price">
+                                            <span class="badge badge-primary font-head text-uppercase">-40% Off</span>
+                                            <p class="font-head">R 359<span class="badge badge-light font-head text-grey text-uppercase">R 599</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="module module-product-add-cart">
+                                    <form action="select">
+                                        <div class="select-size">
+                                            <label for="size" class="text-left text-uppercase font-weight-bold "><p class="mb-0">Size</p></label>
+                                            <select class="form-control" id="select-size">
+                                                <option>SIZE</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                              </select>
+                                        </div>
+                                        <div class="select-quantity">
+                                            <label for="quantity" class="text-left text-uppercase font-weight-bold "><p class="mb-0">Quantity</p></label>
+                                            <select class="form-control" id="select-quantity">
+                                                <option>QUANTITY</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                              </select>
+                                        </div>
+                                        <div class="btn-container text-center mt-3 ">
+                                            <button class="btn-primary-w100">Add to cart</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                            
-
-
 
 
                     </div>
@@ -327,10 +415,11 @@
 
 
 
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/popper.js/dist/popper.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/ede3277332.js"></script>
-<script src="js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+
 </body>
 </html>
