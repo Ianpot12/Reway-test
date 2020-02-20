@@ -9,6 +9,8 @@
 
     <!-- bootstrap  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="https://kit.fontawesome.com/ede3277332.js"></script>
@@ -61,7 +63,7 @@
                     </li>
                 </ul>
     
-                <div class="navbar-buttons d-flex justify-content-center justify-content-lg-end ">
+                <div class="navbar-buttons d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0">
                     <button href="#" class="button btn-secondary">Sign Up</button>
                     <button href="#" class="button btn-primary">Login</button>
                 </div>
@@ -86,6 +88,56 @@
                 </div>
             </div>
         </div>
+
+        <div class="sidebar_offcanvas_container  sidebar-mobile d-lg-none">
+            <div class="sidebar_offcanvas_inner">
+                <a href="#" class="sidebar_offcanvas_trigger mt-1">
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Trigger</span>
+                </a>
+                <div class="sidebar_offcanvas close clearfix">
+                      <div class="siderbar-search-module ">
+                        <div class="module-search">
+                            <div class="module-header text-white">
+                                <a href="#" class="sidebar_offcanvas_trigger_close text-white">
+                                    <i class="icon-seacrh-hide"></i>
+                                    <span>Hide</span>
+                                </a>
+                                <div class="header d-flex align-items-center">
+                                    <h5>Search reway</h5>
+                                    <i class="fa fa-search ml-3"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="module-content">
+                            <form action="filter">
+                                <div class="search-brands d-flex flex-column">
+                                    <label for="filter" class="text-left text-uppercase font-weight-bold "><p class="mb-0">Brands</p></label>
+                                    <input type="text" class="form-control" value="SUPERBALIST, Mango" data-role="tagsinput" id="tags" >
+                                </div>
+                                <div class="select-color mt-4">
+                                    <label for="color" class="text-left text-uppercase font-weight-bold "><p class="mb-0">Color</p></label>
+                                    <select class="form-control" id="select-size">
+                                        <option>Select Color</option>
+                                        <option>Brown</option>
+                                        <option>Black</option>
+                                        <option>Grey</option>
+                                        <option>Navy</option>
+                                      </select>
+                                </div>
+
+                                <!-- Filter by price interval: <b>€ 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/> <b>€ 1000</b> -->
+
+                                <div class="btn-container text-center mt-3 ">
+                                    <button class="btn-primary-search text-uppercase"><i class="fa fa-search mr-3"></i>Search</button>
+                                </div>
+                            </form>
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
 
@@ -97,41 +149,53 @@
             <div class="d-none d-lg-block col-lg-4">
                 <div id="main-sidebar" class="main-sidebar">
 
-
-                    <div class="sidebar_offcanvas_container p-fixed p-lg-relative">
+                    <div class="sidebar_offcanvas_container open">
                         <div class="sidebar_offcanvas_inner">
-                            <a href="#" class="sidebar_offcanvas_trigger">
+                            <a href="#" class="sidebar_offcanvas_trigger mt-1">
+                                <i class="fas fa-chevron-right"></i>
                                 <span>Trigger</span>
                             </a>
-                            <a href="#" class="sidebar_offcanvas_trigger_close">
-                                <i class="icon-seacrh-hide"></i>
-                                <span>Hide</span>
-                            </a>
-                            <div class="sidebar_offcanvas clearfix">
-                                  <div class="siderbar-search-module">
+                            <div class="sidebar_offcanvas close clearfix">
+                                  <div class="siderbar-search-module ">
                                     <div class="module-search">
-                                        <div class="module-header">
-                                            <h5>Search reway</h5>
-                                            <i class="fa fa-search"></i>
-                                        </div>
-                                        <form action="search">
-                                            <div class="search-brands">
-                                                <label for="search">Brands</label>
-                                                <input type="text" name="" id="">
+                                        <div class="module-header text-white">
+                                            <a href="#" class="sidebar_offcanvas_trigger_close text-white">
+                                                <i class="icon-seacrh-hide"></i>
+                                                <span>Hide</span>
+                                            </a>
+                                            <div class="header d-flex align-items-center">
+                                                <h5>Search reway</h5>
+                                                <i class="fa fa-search ml-3"></i>
                                             </div>
-                                            <div class="select-color">
+                                        </div>
+                                    </div>
+                                    <div class="module-content">
+                                        <form action="filter">
+                                            <div class="search-brands d-flex flex-column">
+                                                <label for="filter" class="text-left text-uppercase font-weight-bold "><p class="mb-0">Brands</p></label>
+                                                <input type="text" class="form-control" value="SUPERBALIST, Mango" data-role="tagsinput" id="tags" >
+                                            </div>
+                                            <div class="select-color mt-4">
                                                 <label for="color" class="text-left text-uppercase font-weight-bold "><p class="mb-0">Color</p></label>
                                                 <select class="form-control" id="select-size">
                                                     <option>Select Color</option>
-                                                    <option>8</option>
-                                                    <option>9</option>
-                                                    <option>10</option>
-                                                    <option>11</option>
+                                                    <option>Brown</option>
+                                                    <option>Black</option>
+                                                    <option>Grey</option>
+                                                    <option>Navy</option>
                                                   </select>
                                             </div>
+
+                                            <!-- Filter by price interval: <b>€ 10</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/> <b>€ 1000</b> -->
+
+                                            <div class="btn-container text-center mt-3 ">
+                                                <button class="btn-primary-search text-uppercase"><i class="fa fa-search mr-3"></i>Search</button>
+                                            </div>
+
                                         </form>
+                                   
                                     </div>
-                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,7 +204,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
-                                <div class="advert">
+                                <div class="advert mt-2">
                                     <img src="assets/img/advert-banner.png" class="img-fluid d-block" alt="">
                                 </div>
                             </div>
@@ -148,12 +212,12 @@
                     </div>
                         
 
-                        <div class="row ">
+                        <div class="row row-subscribe">
                             <div class="col-12">
                                 <div class="module module-subscribe">
 
                                     <div class="module-subscribe-head text-center">
-                                        <button type="button" class="close" aria-label="Close">
+                                        <button type="button" class="close btn-close" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                           </button>
                                         <i class="fa fa-envelope-o text-white"></i>
@@ -180,8 +244,8 @@
                     <div class="conatainer-fluid">
 
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="module module-sale-banner">
+                            <div class="col-lg-12 p-0">
+                                <div class="module module-sale-banner mt-5">
                                     <div class="row d-flex align-items-center">
                                         <div class="col-7 col-lg-6">
                                             <h3 class="font-head text-left text-white">Summer sale!</h3>
@@ -197,8 +261,8 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <nav aria-label="breadcrumb">
-                                    <ul class="breadcrumb module-breadcrumb">
+                                <nav aria-label="breadcrumb ">
+                                    <ul class="breadcrumb module-breadcrumb mt-3 mt-lg-5">
                                       <li class="breadcrumb-item"><a href="#home">home</a></li>
                                       <li class="breadcrumb-item"><a href="#boots">boots</a></li>
                                       <li class="breadcrumb-item active" aria-current="page">Dylan Hiker Boots</li>
@@ -206,17 +270,11 @@
                                   </nav>
                             </div>
                         </div>
-
-                        <!--Slides-->
-
-
                         <div class="row">
-
                             <div class="col-12 col-md-6">
-                                <!--Carousel Wrapper-->
                                 <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
-                                    <!--Slides-->
                                     <div class="carousel-inner" role="listbox">
+                                    <div class="badge badge-primary font-head text-uppercase">-40% 0ff</div>
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" src="assets/img/boot-5.png" alt="First slide">
                                     </div>
@@ -242,8 +300,7 @@
                                           </ol>
                                     </div>
                                     </div>
-                                    <!--/.Slides-->
-                                    <!--Controls-->
+                            
                                     <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
                                     <span class="carousel-nav-left" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
@@ -252,26 +309,15 @@
                                     <span class="carousel-nav-right" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                     </a>
-                                    <!--/.Controls-->
-                                    <ol class="carousel-indicators thumbnails">
-                                    <li data-target="#carousel-thumb" data-slide-to="4">
-                                        <img class="d-block w-100" src="assets/img/boot-3.png" class="img-fluid">
-                                    </li>
-                                    <li data-target="#carousel-thumb" data-slide-to="3"><img class="d-block w-100" src="assets/img/boot-2.png"
-                                        class="img-fluid"></li>
-                                        <li data-target="#carousel-thumb" data-slide-to="2"><img class="d-block w-100" src="assets/img/boot-1.png"
-                                            class="img-fluid"></li>
-                                    <li data-target="#carousel-thumb" data-slide-to="0" class="active"> <img class="d-block w-100" src="assets/img/boot-5.png"
-                                        class="img-fluid"></li>
-                                    <li data-target="#carousel-thumb" data-slide-to="1"><img class="d-block w-100" src="assets/img/boot-4.png"
-                                        class="img-fluid"></li>
-                                    
-                                    
-                                    </ol>
+                          
+                                    <div class="row carousel-indicators thumbnails d-flex justify-content-start">
+                                        <div class="col-3 mt-3 mr-3 mb-3 p-0" data-target="#carousel-thumb" data-slide-to="4"><img class="d-block w-100 img-fluid" src="assets/img/boot-3.png"></div>
+                                        <div class="col-3  mt-3 mr-3 mb-3 p-0"  data-target="#carousel-thumb" data-slide-to="3"><img class="d-block w-100" src="assets/img/boot-2.png"></div>
+                                        <div class="col-3  mt-3 mr-3 mb-3 p-0" data-target="#carousel-thumb" data-slide-to="2"><img class="d-block w-100 img-fluid" src="assets/img/boot-1.png"></div>
+                                        <div class="col-3 mt-3 mr-3 mb-3 mr-lg-0 p-0" data-target="#carousel-thumb" data-slide-to="0" class="active"><img class="d-block w-100 img-fluid" src="assets/img/boot-5.png"></div>
+                                        <div class="col-3  mt-3 mt-lg-0 mr-3 p-0" data-target="#carousel-thumb" data-slide-to="1"><img class="d-block w-100 img-fluid" src="assets/img/boot-4.png"></div>
+                                    </div>
                                 </div>
-                                <!--/.Carousel Wrapper-->
-
-                                
                             </div>
 
                             <div class="col-12 col-md-6">
@@ -294,7 +340,7 @@
                                             <div class="col-8">
                                                 <ul text-dark>
                                                     <li><p>Faux Leather</p></li>
-                                                    <li><p>Brown</p></li>
+                                                    <li class="product-color d-flex"><p class="pl-3">Brown</p></li>
                                                     <li><p>Superbalist</p></li>
                                                 </ul>
                                             </div>
@@ -346,10 +392,122 @@
                                     </form>
                                 </div>
                             </div>
-                           
-
-
                     </div>
+
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center justify-content-lg-start">
+                            <div class="module module-header">
+                                <h4 class="mt-4 mb-4">More from<span class="half-blue pl-1">Boots</span><span class="line d-none d-lg-block"></span></h4>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center justify-content-lg-start">
+                            <div class="module module-related-product">
+                                <div class="product-image">
+                                    <div class="badge badge-primary">-40% Off</div>
+                                    <img class="img-fluid" src="assets/img/Hargrave-Ankle-boot.jpg" alt="Hargrave Ankle boot">
+                                </div>
+                                <div class="product-content">
+                                    <h5>Hargrave Ankle boot</h5>
+                                    <div class="badge badge-secondary badge-secondary-light font-weight-bold text-grey">Superbalist</div>
+                                    <div class="price-container d-flex justify-content-between align-items-baseline">
+                                        <p class="font-head">R 500</p>
+                                        <a href="#">View<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center justify-content-lg-start">
+                            <div class="module module-related-product">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="assets/img/Cameron-leather .jpg" alt="Cameron leather ">
+                                    <div class="badge badge-dark text-uppercase">low stock</div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Cameron leather </h5>
+                                    <div class="badge badge-secondary badge-secondary-light  font-weight-bold text-grey">Superbalist</div>
+                                    <div class="price-container d-flex justify-content-between align-items-baseline">
+                                        <p class="font-head">R 500</p>
+                                        <a href="#">View<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center justify-content-lg-start">
+                            <div class="module module-related-product">
+                                <div class="product-image">
+                                    <div class="badge badge-primary">-40% Off</div>
+                                    <img class="img-fluid" src="assets/img/Grayson-Brogue.jpg" alt="Grayson Brogue">
+                                    <div class="badge badge-dark text-uppercase">low stock</div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Grayson Brogue</h5>
+                                    <div class="badge badge-secondary badge-secondary-light  font-weight-bold text-grey">Superbalist</div>
+                                    <div class="price-container d-flex justify-content-between align-items-baseline">
+                                        <p class="font-head">R 500</p>
+                                        <a href="#">View<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center justify-content-lg-start">
+                            <div class="module module-related-product">
+                                <div class="product-image">
+                                    <div class="badge badge-primary">-40% Off</div>
+                                    <img class="img-fluid" src="assets/img/Orca.jpg" alt="Orca">
+                                    <div class="badge badge-dark text-uppercase">low stock</div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Orca</h5>
+                                    <div class="badge badge-secondary badge-secondary-light  font-weight-bold text-grey">Superbalist</div>
+                                    <div class="price-container d-flex justify-content-between align-items-baseline">
+                                        <p class="font-head">R 500</p>
+                                        <a href="#">View<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 mb-5 d-flex justify-content-center justify-content-lg-start">
+                            <div class="module module-related-product">
+                                <div class="product-image">
+                                    <img class="img-fluid" src="assets/img/Jean-Hiker-Boots.jpg" alt="Jean Hiker Boots">
+                                </div>
+                                <div class="product-content">
+                                    <h5>Jean Hiker Boots</h5>
+                                    <div class="badge badge-secondary badge-secondary-light  font-weight-bold text-grey">Superbalist</div>
+                                    <div class="price-container d-flex justify-content-between align-items-baseline">
+                                        <p class="font-head">R 500</p>
+                                        <a href="#">View<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-lg-none mb-5 row-subscribe">
+                        <div class="col-12">
+                            <div class="module module-subscribe mt-0">
+
+                                <div class="module-subscribe-head text-center">
+                                    <button type="button" class="close btn-close" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    <i class="fa fa-envelope-o text-white"></i>
+                                    <h5 class="text-white text-uppercase mb-0">Sign up to our mailing list!</h5>
+                                </div> 
+                                <div class="module-subscribe-content">
+                                    <form action="subscribe">
+                                        <label for="email" class="text-left text-white text-uppercase font-weight-bold "><p class="mb-0">Email</p></label>
+                                        <input type="email" id="email" class="form-control" placeholder="Enter email address"> 
+                                    </form>
+                                    <div class="btn-container text-center mt-3 ">
+                                        <button class="btn-light-lg">Submit</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -399,10 +557,10 @@
                     </div>
                     <ul class="fwidget-social-follow d-flex flex-row justify-content-center justify-content-md-start">
                         <li class="fwidget-item mr-3">
-                            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+                            <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
                         </li>
                         <li class="fwidget-item">
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -412,10 +570,9 @@
     </div>
 </footer>
        
-
-
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
