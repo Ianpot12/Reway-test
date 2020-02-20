@@ -304,6 +304,19 @@ $color_black: #000;
 
     }
 
+    &-toggler {
+
+        border: 0 $nb;
+        color: $color_accent $nb;
+        outline: none $nb;
+        border-color: $color_accent;
+
+        .navbar-toggler-icon {
+            color: $color_accent $nb;
+        }
+
+    }
+
 
 }
 
